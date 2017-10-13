@@ -1,0 +1,49 @@
+<!-- Michael Lawrence's Google Maps API's - Placing the red bubble on a Google Map. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Mikes Map</title>
+	
+<!-- map inline style sheet below -->
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+<!-- ---------------------------- -->
+  </head>
+  <body>
+    <h3>Mikes Google Maps 1.0</h3>
+
+<!-- display map here ----------- -->
+    <div id="map"></div>
+<!-- ---------------------------- -->
+
+<!-- Initialize the map method, set lat & lng, returns map, level of map zoom = 4, center align, ADD THE RED BUBBLE MARKER HERE. ----------- -->
+    <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+<!-- ---------------------------- -->
+
+<!-- Google Maps API's link, with my Google Account API Key = AIzaSyDKo8ZoB2jkptCvs9dwUs51GHhubub5H4E -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKo8ZoB2jkptCvs9dwUs51GHhubub5H4E&callback=initMap">
+    </script>
+<!-- ---------------------------- -->
+<!-- The key will work if you pay for it. -->
+  </body>
+</html>
+
+<!-- https://developers.google.com/maps/documentation/javascript/adding-a-google-map#page -->
